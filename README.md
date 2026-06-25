@@ -1,1 +1,1 @@
-# lifeakash.github.io
+GeoStamp Camera helps you capture photos with GPS location, date, time, address, latitude, longitude, altitude, and map stamps. Perfect for site visits, construction work, surveys, travel, property inspections, delivery proof, and field reporting. Create accurate location-tagged photos instantly.
