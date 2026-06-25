@@ -4,81 +4,74 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About - GeoStamp Camera</title>
-<meta name="description" content="About GeoStamp Camera and developer Akash Das">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
---primary:#1565c0;--secondary:#0d47a1;--bg:#f4f8fc;--card:#fff;
-}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
-body{background:var(--bg);color:#333}
-header{
-background:linear-gradient(135deg,var(--secondary),var(--primary));
-color:#fff;padding:70px 20px;text-align:center}
-header h1{font-size:2.8rem}
-header p{margin-top:12px;font-size:1.1rem;opacity:.95}
-nav{margin-top:25px}
-nav a{color:#fff;text-decoration:none;margin:0 14px;font-weight:600}
-.container{max-width:1100px;margin:auto;padding:40px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-.card{background:var(--card);border-radius:18px;padding:28px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
-.card h2{color:var(--primary);margin-bottom:15px}
-.feature{padding:14px;border-radius:12px;background:#eef5ff;font-weight:600}
-.cta{text-align:center;margin:40px 0}
-.btn{display:inline-block;background:var(--primary);color:#fff;padding:14px 28px;border-radius:30px;text-decoration:none}
-footer{background:var(--secondary);color:#fff;text-align:center;padding:22px;margin-top:40px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#050816;color:#fff}
+.hero{min-height:70vh;display:flex;align-items:center;justify-content:center;gap:40px;padding:60px 8%;background:linear-gradient(135deg,#0f172a,#0ea5e9)}
+.hero img{width:140px;border-radius:24px;box-shadow:0 0 30px rgba(255,255,255,.2)}
+.hero h1{font-size:3.5rem}
+.hero p{margin-top:15px;color:#dbeafe;line-height:1.8;max-width:650px}
+.btn{display:inline-block;margin-top:25px;background:#22c55e;color:#fff;text-decoration:none;padding:14px 30px;border-radius:40px;font-weight:700}
+.section{padding:80px 8%}
+.title{text-align:center;font-size:2.4rem;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);padding:24px;border-radius:18px}
+.card h3{margin-bottom:10px;color:#7dd3fc}
+.footer{text-align:center;background:#020617;padding:40px}
+.footer a{color:#38bdf8;text-decoration:none}
+@media(max-width:900px){.hero{flex-direction:column;text-align:center}.hero h1{font-size:2.5rem}}
 </style>
 </head>
 <body>
-<header>
+
+<section class="hero">
+<div>
+<img src="assets/logo.png" alt="GeoStamp Camera Logo">
 <h1>About GeoStamp Camera</h1>
-<p>Professional GPS Camera for Engineers, Surveyors, Travelers & Field Workers</p>
-<nav>
-<a href="/">Home</a>
-<a href="/about.html">About</a>
-<a href="/privacy-policy.html">Privacy Policy</a>
-</nav>
-</header>
-
-<div class="container">
-
-<div class="card">
-<h2>Our Mission</h2>
-<p>GeoStamp Camera helps capture professional photos with GPS location, map, address, date & time, weather, compass, altitude and custom logo. Designed for construction, surveys, inspections, travel and field work.</p>
+<p>GeoStamp Camera is a professional GPS Camera application that helps users capture photos with GPS location, address, map, weather, altitude, compass, latitude & longitude, and date & time stamps. Designed for engineers, surveyors, construction professionals, delivery services and travelers.</p>
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1">Download on Google Play</a>
 </div>
+</section>
 
-<h2 style="margin:35px 0 20px;color:#1565c0">Key Features</h2>
+<section class="section">
+<h2 class="title">Why Choose GeoStamp Camera</h2>
 <div class="grid">
-<div class="feature">📍 GPS Location Stamp</div>
-<div class="feature">🗺️ Live Map</div>
-<div class="feature">📅 Date & Time</div>
-<div class="feature">🌦 Weather</div>
-<div class="feature">🧭 Compass</div>
-<div class="feature">🏔 Altitude</div>
-<div class="feature">🏢 Custom Logo</div>
-<div class="feature">☁ Google Photos Sync</div>
+<div class="card"><h3>📍 GPS Location</h3><p>Accurate GPS coordinates with every photo.</p></div>
+<div class="card"><h3>🗺️ Live Map</h3><p>Embed a live map preview on stamped photos.</p></div>
+<div class="card"><h3>🌤 Weather</h3><p>Capture weather information automatically.</p></div>
+<div class="card"><h3>🏢 Custom Logo</h3><p>Add your own company or project logo.</p></div>
+<div class="card"><h3>🧭 Compass</h3><p>Include direction and altitude information.</p></div>
+<div class="card"><h3>☁ Google Photos Sync</h3><p>Back up your captured photos with ease.</p></div>
 </div>
+</section>
 
-<div class="grid" style="margin-top:35px">
+<section class="section">
+<h2 class="title">Developer</h2>
+<div class="grid">
 <div class="card">
-<h2>Developer</h2>
-<p><strong>Akash Das</strong><br>Android App Developer<br>Creator of GeoStamp Camera</p>
+<h3>👨‍💻 Akash Das</h3>
+<p>Independent Android Developer and creator of GeoStamp Camera. Focused on building practical, easy-to-use applications for professionals and everyday users.</p>
 </div>
-
 <div class="card">
-<h2>Contact</h2>
-<p>📞 <a href="tel:+919614666222">+91 96146 66222</a></p>
-<p style="margin-top:10px;">📧 <a href="mailto:life.akash@outlook.com">life.akash@outlook.com</a></p>
+<h3>📞 Contact</h3>
+<p><strong>Phone:</strong> <a href="tel:+919614666222" style="color:#7dd3fc">+91 96146 66222</a></p>
+<p><strong>Email:</strong> <a href="mailto:life.akash@outlook.com" style="color:#7dd3fc">life.akash@outlook.com</a></p>
+<p><strong>Website:</strong> <a href="https://lifeakash.github.io" style="color:#7dd3fc">lifeakash.github.io</a></p>
 </div>
 </div>
+</section>
 
-<div class="cta">
-<a class="btn" href="https://play.google.com/store">Download on Google Play</a>
-</div>
-
-</div>
-
-<footer>
-© 2026 GeoStamp Camera • Developed by <strong>Akash Das</strong>
+<footer class="footer">
+<h3>GeoStamp Camera</h3>
+<p>Capture • Stamp • Remember</p><br>
+<p>
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="privacy-policy.html">Privacy Policy</a>
+</p><br>
+<p>© 2026 AKD Studio • Developed by Akash Das</p>
 </footer>
+
 </body>
 </html>
