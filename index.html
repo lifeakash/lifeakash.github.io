@@ -1,291 +1,587 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GeoStamp Camera - GPS Location, Date &amp; Time Stamp Camera</title>
-<meta content="Capture photos with GPS location, address, map, weather, altitude, coordinates, date and time stamps." name="description"/><meta content="website" property="og:type"/><meta content="GeoStamp Camera" property="og:site_name"/><meta content="GeoStamp Camera - GPS Location, Date &amp; Time Stamp Camera" property="og:title"/><meta content="Capture photos with GPS location, address, map, weather, altitude, coordinates and date &amp; time stamps." property="og:description"/><meta content="https://lifeakash.github.io/" property="og:url"/><meta content="https://lifeakash.github.io/assets/banner.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="GeoStamp Camera App" property="og:image:alt"/><meta content="en_US" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="GeoStamp Camera" name="twitter:title"/><meta content="Professional GPS Camera App with Weather, Compass, Maps &amp; Custom Logo." name="twitter:description"/><meta content="https://lifeakash.github.io/assets/banner.jpg" name="twitter:image"/><link href="https://lifeakash.github.io/" rel="canonical"/><link href="assets/logo.png" rel="icon"/>
+
+<!-- Primary SEO Meta Tags -->
+<title>GeoStamp Camera - GPS Map Camera, Geotag Photo & Timestamp Camera</title>
+<meta name="title" content="GeoStamp Camera - GPS Map Camera, Geotag Photo & Timestamp Camera"/>
+<meta name="description" content="Capture photos with real-time GPS location, address, map, weather, altitude, coordinates, date & time stamps. Clean experience with minimal banner ads only."/>
+<meta name="keywords" content="gps camera, gps map camera, geo stamp camera, geotag camera, date and time stamp camera, gps photo location, field inspection camera, timestamp camera"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="GeoStamp Camera"/>
+<meta property="og:title" content="GeoStamp Camera - GPS Map Camera & Location Stamp"/>
+<meta property="og:description" content="Professional GPS Map Camera for Android with address, map, coordinates, altitude, compass, and date/time stamps. Minimal banner ads only."/>
+<meta property="og:url" content="https://lifeakash.github.io/"/>
+<meta property="og:image" content="https://lifeakash.github.io/assets/banner.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="GeoStamp Camera App"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="GeoStamp Camera - GPS Map & Timestamp Camera"/>
+<meta name="twitter:description" content="Capture geotagged photos with GPS map, address, coordinates, and weather. Clean experience with minimal banner ads."/>
+<meta name="twitter:image" content="https://lifeakash.github.io/assets/banner.jpg"/>
+
+<link rel="canonical" href="https://lifeakash.github.io/"/>
+<link rel="icon" href="assets/logo.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<!-- Structured Data: SoftwareApplication & FAQPage -->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "GeoStamp Camera",
+    "applicationCategory": "PhotographyApplication",
+    "operatingSystem": "Android",
+    "url": "https://lifeakash.github.io/",
+    "image": "https://lifeakash.github.io/assets/banner.jpg",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is GeoStamp Camera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GeoStamp Camera is an Android GPS map camera application that automatically stamps real-time GPS coordinates, address, map snippet, altitude, compass heading, and date and time onto your photos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GeoStamp Camera have annoying pop-up ads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. GeoStamp Camera is built for a smooth user experience with only minimal banner ads and zero disruptive full-screen popups or unskippable video ads while capturing photos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GeoStamp Camera a good alternative to other GPS Map Camera apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. It provides fast photo capture, high-precision GPS watermarking, customizable stamp templates, and offline camera functionality without slowing down your device."
+        }
+      }
+    ]
+  }
+]
+</script>
+
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
-body{
-background:#050816;
-color:white;
-overflow-x:hidden;
+body {
+  background: #050816;
+  color: white;
+  overflow-x: hidden;
 }
 
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:50px 8%;
-background:
-linear-gradient(135deg,#0f172a,#0ea5e9);
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.hero-content{
-flex:1;
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
-.hero-content h1{
-font-size:4rem;
-font-weight:800;
-margin-bottom:20px;
+.nav-brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
 }
 
-.hero-content p{
-font-size:1.1rem;
-line-height:1.8;
-color:#dbeafe;
-max-width:650px;
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
 
-.logo{
-width:120px;
-border-radius:25px;
-margin-bottom:20px;
-box-shadow:0 0 30px rgba(255,255,255,.2);
+.nav-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.2s;
 }
 
-.download-btn{
-display:inline-block;
-padding:15px 35px;
-margin-top:25px;
-background:#22c55e;
-color:white;
-text-decoration:none;
-border-radius:50px;
-font-weight:700;
-transition:.3s;
+.nav-links a:hover {
+  color: #38bdf8;
 }
 
-.download-btn:hover{
-transform:translateY(-3px);
+.nav-cta {
+  background: #22c55e;
+  color: white !important;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 600 !important;
 }
 
-.hero-image{
-flex:1;
-text-align:center;
+.nav-cta:hover {
+  background: #16a34a;
 }
 
-.hero-image img{
-width:320px;
-border-radius:30px;
-animation:float 4s ease-in-out infinite;
-box-shadow:0 20px 50px rgba(0,0,0,.4);
+/* Hero Section */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 8%;
+  background: linear-gradient(135deg, #0f172a, #0ea5e9);
+  gap: 40px;
 }
 
-@keyframes float{
-50%{
-transform:translateY(-15px);
-}
+.hero-content {
+  flex: 1.2;
 }
 
-.section{
-padding:90px 8%;
+.ad-badge {
+  display: inline-block;
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid #22c55e;
+  color: #86efac;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.section-title{
-font-size:2.5rem;
-text-align:center;
-margin-bottom:50px;
+.hero-content h1 {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #dbeafe;
+  max-width: 650px;
 }
 
-.feature-card{
-background:rgba(255,255,255,.06);
-padding:25px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-transition:.3s;
-text-align:center;
+.download-btn {
+  display: inline-block;
+  padding: 15px 35px;
+  margin-top: 25px;
+  background: #22c55e;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: .3s;
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
 }
 
-.feature-card:hover{
-transform:translateY(-8px);
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(34, 197, 94, 0.5);
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.hero-image {
+  flex: 0.8;
+  text-align: center;
 }
 
-.gallery img{
-width:100%;
-border-radius:20px;
-transition:.3s;
+.hero-image img {
+  width: 300px;
+  border-radius: 30px;
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 0 20px 50px rgba(0,0,0,.4);
 }
 
-.gallery img:hover{
-transform:scale(1.03);
+@keyframes float {
+  50% { transform: translateY(-15px); }
 }
 
-.qr-section{
-text-align:center;
-background:#0f172a;
-padding:80px 20px;
+/* Sections */
+.section {
+  padding: 80px 8%;
 }
 
-.qr{
-width:220px;
-border-radius:20px;
-margin:25px 0;
-background:white;
-padding:10px;
+.section-title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.footer{
-text-align:center;
-padding:40px;
-background:#020617;
+.section-subtitle {
+  text-align: center;
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  font-size: 1.05rem;
 }
 
-.footer a{
-color:#38bdf8;
-text-decoration:none;
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.feature-card {
+  background: rgba(255,255,255,.06);
+  padding: 30px 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: .3s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.feature-card h3 {
+  color: #38bdf8;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* FAQ Box */
+.faq-box {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 18px;
+  border-left: 4px solid #38bdf8;
+}
+
+.faq-box h4 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: #f1f5f9;
+}
+
+.faq-box p {
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.qr-section {
+  text-align: center;
+  background: #0f172a;
+  padding: 80px 20px;
+}
+
+.qr {
+  width: 220px;
+  border-radius: 20px;
+  margin: 25px 0;
+  background: white;
+  padding: 10px;
+}
+
+/* Footer */
+.footer {
+  padding: 60px 8% 30px 8%;
+  background: #020617;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-links-grid h4 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+.footer-links-grid ul {
+  list-style: none;
+}
+
+.footer-links-grid li {
+  margin-bottom: 10px;
+}
+
+.footer-links-grid a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.footer-links-grid a:hover {
+  color: #38bdf8;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.footer-bottom a {
+  color: #38bdf8;
+  text-decoration: none;
 }
 
 @media(max-width:900px){
-
-.hero{
-flex-direction:column;
-text-align:center;
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+  }
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hero-image img {
+    width: 240px;
+  }
 }
-
-.hero-content h1{
-font-size:2.8rem;
-}
-
-.hero-image{
-margin-top:40px;
-}
-
-.hero-image img{
-width:260px;
-}
-
-}
-
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GeoStamp Camera","applicationCategory":"PhotographyApplication","operatingSystem":"Android","url":"https://lifeakash.github.io/","image":"https://lifeakash.github.io/assets/banner.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}</script></head>
+</head>
+
 <body>
+
+<!-- Header Navigation -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <img src="assets/logo.png" alt="GeoStamp Camera Logo"/>
+    <span>GeoStamp Camera</span>
+  </a>
+  <div class="nav-links">
+    <a href="features.html">Features</a>
+    <a href="gps-camera.html">GPS Camera</a>
+    <a href="gps-map-camera-alternative.html">Alternative</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About</a>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1" target="_blank">Download App</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
 <section class="hero">
-<div class="hero-content">
-<img alt="GeoStamp Camera screenshot" class="logo" src="assets/logo.png"/>
-<h1>GeoStamp Camera</h1>
-<p>
-Capture photos with GPS location, address,
-weather, altitude, map, coordinates,
-date &amp; time stamps.
-
-Perfect for engineers, surveyors,
-property inspections, delivery proof,
-construction work and travel memories.
-
-</p>
-<a class="download-btn" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1" target="_blank">
-
-Download on Google Play
-
-</a>
-</div>
-<div class="hero-image">
-<img alt="GeoStamp Camera screenshot" src="assets/screenshot1.jpeg"/>
-</div>
+  <div class="hero-content">
+    <div class="ad-badge">✨ Clean Experience: Minimal Banner Ads Only • No Popups</div>
+    <h1>GeoStamp Camera: GPS Map &amp; Timestamp Camera</h1>
+    <p>
+      The lightweight GPS camera for Android. Automatically capture and embed precise GPS coordinates, live map, address, altitude, weather, and date &amp; time watermarks onto your photos.
+      <br/><br/>
+      <strong>Engineered without annoying full-screen video ads</strong> that interrupt your inspections and photography.
+    </p>
+    <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1" target="_blank">
+      Get It On Google Play
+    </a>
+  </div>
+  <div class="hero-image">
+    <img alt="GeoStamp Camera Screenshot" src="assets/screenshot1.jpeg"/>
+  </div>
 </section>
-<section class="section">
-<h2 class="section-title">
-Powerful Features
-</h2>
-<div class="features">
-<div class="feature-card">📍 GPS Coordinates</div>
-<div class="feature-card">🗺️ Live Map Stamp</div>
-<div class="feature-card">📅 Date &amp; Time Stamp</div>
-<div class="feature-card">🌤 Weather Information</div>
-<div class="feature-card">📏 Altitude &amp; Accuracy</div>
-<div class="feature-card">🧭 Compass Direction</div>
-<div class="feature-card">📷 HD Photo Capture</div>
-<div class="feature-card">⚙️ Custom Stamp Templates</div>
-<div class="feature-card">🏗 Site Inspection</div>
-<div class="feature-card">🚚 Delivery Proof</div>
-<div class="feature-card">🏠 Property Survey</div>
-<div class="feature-card">✈️ Travel Memories</div>
-</div>
+
+<!-- Why GeoStamp Camera Section -->
+<section class="section" style="background: rgba(15, 23, 42, 0.6);">
+  <h2 class="section-title">Why Choose GeoStamp Camera?</h2>
+  <p class="section-subtitle">Designed for speed, accuracy, and uninterrupted field work.</p>
+  
+  <div class="features">
+    <div class="feature-card">
+      <h3>🚫 No Fullscreen Ad Popups</h3>
+      <p>Other GPS map camera apps interrupt your shots with 30-second video popups. GeoStamp uses only lightweight banner ads so your camera is always fast and responsive.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📍 High-Accuracy GPS Map</h3>
+      <p>Embed exact latitude, longitude, elevation, street address, and an interactive mini-map stamp directly onto the photo.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📅 Tamper-Proof Date &amp; Time</h3>
+      <p>Accurate timestamps formatted to your local timezone for undeniable legal, civil, and professional proof.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🏗️ Professional Field Utility</h3>
+      <p>Trusted by civil engineers, land surveyors, construction contractors, insurance adjusters, delivery agents, and travelers.</p>
+    </div>
+  </div>
 </section>
+
+<!-- Powerful Features Grid -->
 <section class="section">
-<div style="display:flex;justify-content:center;padding:40px 20px;">
+  <h2 class="section-title">Core Features</h2>
+  <div class="features">
+    <div class="feature-card">📍 GPS Coordinates &amp; Address</div>
+    <div class="feature-card">🗺️ Live Mini Map Overlay</div>
+    <div class="feature-card">📅 Date &amp; Time Stamp</div>
+    <div class="feature-card">🌤 Real-Time Weather &amp; Temp</div>
+    <div class="feature-card">📏 Altitude &amp; GPS Accuracy</div>
+    <div class="feature-card">🧭 Compass Direction Heading</div>
+    <div class="feature-card">📷 Crisp HD Photo Capture</div>
+    <div class="feature-card">⚙️ Customizable Stamp Layouts</div>
+  </div>
+</section>
+
+<!-- Video Demo & Screenshots -->
+<section class="section" style="background: rgba(15, 23, 42, 0.4);">
+  <div style="display:flex;justify-content:center;padding:20px 0 40px 0;">
     <iframe
-        width="360"
-        height="640"
-        src="https://www.youtube.com/embed/tc7wxiHWZpY?rel=0"
-        title="GeoStamp Camera Demo"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-        style="border:none;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:100%;">
+      width="360"
+      height="640"
+      src="https://www.youtube.com/embed/tc7wxiHWZpY?rel=0"
+      title="GeoStamp Camera App Demo"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="border:none;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:100%;">
     </iframe>
-</div>
-<h2 class="section-title">
-App Screenshots
-</h2>
-<div class="gallery">
-<img alt="GeoStamp Camera screenshot" src="assets/screenshot1.jpeg"/>
-<img alt="GeoStamp Camera screenshot" src="assets/screenshot2.jpeg"/>
-<img alt="GeoStamp Camera screenshot" src="assets/screenshot3.jpeg"/>
-<img alt="GeoStamp Camera screenshot" src="assets/screenshot4.jpeg"/>
-<img alt="GeoStamp Camera screenshot" src="assets/screenshot5.jpeg"/>
-<img alt="GeoStamp Camera screenshot" src="assets/screenshot6.jpeg"/>
-</div>
+  </div>
+
+  <h2 class="section-title">App Screenshots</h2>
+  <div class="gallery">
+    <img alt="GeoStamp GPS Camera screenshot" src="assets/screenshot1.jpeg"/>
+    <img alt="GeoStamp live map stamp screenshot" src="assets/screenshot2.jpeg"/>
+    <img alt="GeoStamp date and time stamp screenshot" src="assets/screenshot3.jpeg"/>
+    <img alt="GeoStamp custom stamp screenshot" src="assets/screenshot4.jpeg"/>
+    <img alt="GeoStamp camera coordinates screenshot" src="assets/screenshot5.jpeg"/>
+    <img alt="GeoStamp settings screenshot" src="assets/screenshot6.jpeg"/>
+  </div>
 </section>
+
+<!-- FAQ Section -->
+<section class="section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div style="max-width: 800px; margin: 0 auto;">
+    <div class="faq-box">
+      <h4>What makes GeoStamp Camera different from other GPS cameras?</h4>
+      <p>GeoStamp Camera focuses on a clean user experience. While competing GPS camera apps bombard users with intrusive pop-up ads and video interruptions, GeoStamp uses non-intrusive banner ads that do not block your photo shooting workflow.</p>
+    </div>
+    <div class="faq-box">
+      <h4>Can I customize the stamp templates?</h4>
+      <p>Yes. You can customize the date and time format, coordinates, map view, compass heading, and altitude according to your documentation needs.</p>
+    </div>
+    <div class="faq-box">
+      <h4>Does the camera work offline?</h4>
+      <p>Yes. Photo capture, timestamps, and GPS coordinate tagging work completely offline using your phone's built-in hardware GPS sensor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QR Section -->
 <section class="qr-section">
-<h2>Scan &amp; Download</h2>
-<img alt="GeoStamp Camera screenshot" class="qr" src="assets/qr.png"/>
-<p>Install GeoStamp Camera instantly</p>
-<br/>
-<a class="download-btn" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1" target="_blank">
-
-Get It On Google Play
-
-</a>
+  <h2>Scan &amp; Download GeoStamp Camera</h2>
+  <img alt="GeoStamp Camera QR Code" class="qr" src="assets/qr.png"/>
+  <p>Available for Android devices on Google Play</p>
+  <br/>
+  <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1" target="_blank">
+    Download Free on Google Play
+  </a>
 </section>
+
+<!-- Comprehensive SEO Footer -->
 <footer class="footer">
-<h3>GeoStamp Camera</h3>
-<br/>
-<p>
-Capture • Stamp • Remember
-</p>
-<br/>
-<p>
-<a href="about.html">About</a>
-  |  
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
-<br/>
-<p>
-<a href="mailto:das.akash.jio@gmail.com">
-das.akash.jio@gmail.com
-</a>
-</p>
-<br/>
-<p>
-© 2026 AKD Studio
-</p>
+  <div class="footer-links-grid">
+    <div>
+      <h4>GeoStamp Camera</h4>
+      <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+        The lightweight GPS Map Camera for Android. Designed for professionals and everyday explorers.
+      </p>
+    </div>
+    <div>
+      <h4>Features &amp; Guides</h4>
+      <ul>
+        <li><a href="features.html">All Features</a></li>
+        <li><a href="gps-camera.html">GPS Camera</a></li>
+        <li><a href="gps-location-camera.html">GPS Location Camera</a></li>
+        <li><a href="date-time-stamp-camera.html">Date &amp; Time Stamp Camera</a></li>
+        <li><a href="compass-camera.html">Compass Camera</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Use Cases</h4>
+      <ul>
+        <li><a href="construction-camera.html">Construction Camera</a></li>
+        <li><a href="engineering-camera.html">Engineering Camera</a></li>
+        <li><a href="survey-camera.html">Survey Camera</a></li>
+        <li><a href="field-work-camera.html">Field Work Camera</a></li>
+        <li><a href="gps-map-camera-alternative.html">GPS Map Camera Alternative</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Support &amp; Legal</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="mailto:das.akash.jio@gmail.com">Contact Developer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 AKD Studio • GeoStamp Camera. All rights reserved.</p>
+  </div>
 </footer>
+
 </body>
 </html>
