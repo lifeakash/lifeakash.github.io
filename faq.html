@@ -3,103 +3,295 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GeoStamp Camera FAQ | GPS Location, Date & Time Stamp Camera</title>
-<meta name="description" content="Frequently Asked Questions about GeoStamp Camera, including GPS location, date & time stamp, weather, compass, custom logo and Google Photos support.">
 
+<title>Frequently Asked Questions | GeoStamp Camera</title>
+<meta name="description" content="Answers to common questions about GeoStamp Camera: GPS location stamps, offline mode, date & time formats, minimal ads, custom logos, and field inspections.">
+<link rel="canonical" href="https://lifeakash.github.io/faq.html">
+<link rel="icon" href="assets/logo.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<!-- Schema.org FAQPage -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@type":"Question",
-      "name":"Is GeoStamp Camera free to use?",
-      "acceptedAnswer":{"@type":"Answer","text":"Yes. GeoStamp Camera is free to download and includes premium features that can be unlocked."}
+      "@type": "Question",
+      "name": "Is GeoStamp Camera free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, GeoStamp Camera is free to download on Google Play and includes all core GPS stamping, live map overlays, and timestamp features."
+      }
     },
     {
-      "@type":"Question",
-      "name":"Can I add GPS location to my photos?",
-      "acceptedAnswer":{"@type":"Answer","text":"Yes. GeoStamp Camera can stamp GPS coordinates, address and map information directly onto your photos."}
+      "@type": "Question",
+      "name": "Does GeoStamp Camera have intrusive pop-up ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. GeoStamp Camera only displays subtle, non-intrusive banner ads that do not interrupt your photo shooting workflow. There are zero 30-second video popups or full-screen interruptions."
+      }
     },
     {
-      "@type":"Question",
-      "name":"Can I add date and time stamps?",
-      "acceptedAnswer":{"@type":"Answer","text":"Yes. You can customize the date and time format and include it on every photo."}
+      "@type": "Question",
+      "name": "Can I use GeoStamp Camera offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. GeoStamp Camera can capture photos and stamp GPS coordinates, altitude, compass bearing, and date/time completely offline using your phone's built-in hardware GPS receiver."
+      }
     },
     {
-      "@type":"Question",
-      "name":"Does GeoStamp Camera support weather and compass?",
-      "acceptedAnswer":{"@type":"Answer","text":"Yes. The app can display weather information and compass direction on supported devices."}
+      "@type": "Question",
+      "name": "Can I add my company logo to the photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can upload and embed your custom company or contractor logo directly into the stamp layout for professional client reports."
+      }
     },
     {
-      "@type":"Question",
-      "name":"Can I use my own company logo?",
-      "acceptedAnswer":{"@type":"Answer","text":"Yes. GeoStamp Camera supports custom logo stamps for professional photo documentation."}
+      "@type": "Question",
+      "name": "Which coordinate formats are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GeoStamp Camera supports Decimal Degrees (DD), Degrees Minutes Seconds (DMS), UTM, and Open Location Codes (Plus Codes)."
+      }
     },
     {
-      "@type":"Question",
-      "name":"Does it work offline?",
-      "acceptedAnswer":{"@type":"Answer","text":"Many features work offline. Address lookup and some map-related features may require an internet connection."}
-    },
-    {
-      "@type":"Question",
-      "name":"Who is GeoStamp Camera for?",
-      "acceptedAnswer":{"@type":"Answer","text":"It is useful for engineers, surveyors, contractors, field staff, real estate professionals, inspectors and travelers."}
-    },
-    {
-      "@type":"Question",
-      "name":"Does GeoStamp Camera support Google Photos?",
-      "acceptedAnswer":{"@type":"Answer","text":"Yes. The app includes Google Photos sync support for compatible workflows."}
+      "@type": "Question",
+      "name": "Is GeoStamp Camera suitable for construction and engineering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is specifically designed for civil engineers, land surveyors, inspectors, and contractors who require verifiable proof of site progress and location."
+      }
     }
   ]
 }
 </script>
 
 <style>
-body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:40px auto;padding:20px;line-height:1.7;color:#222}
-h1{color:#1565c0}
-h2{margin-top:28px}
-.q{font-weight:bold}
-footer{margin-top:40px;color:#666}
-a.button{display:inline-block;background:#1565c0;color:#fff;text-decoration:none;padding:12px 18px;border-radius:6px}
+:root {
+  --bg-primary: #050816;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --border-light: rgba(255, 255, 255, 0.08);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --cyan: #38bdf8;
+  --green: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.8;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8%;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  margin-left: 20px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-cta {
+  background: var(--green);
+  color: white !important;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 600 !important;
+}
+
+.content-container {
+  max-width: 860px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 45px;
+  font-size: 1.1rem;
+}
+
+.faq-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--cyan);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: 0.25s;
+}
+
+.faq-card:hover {
+  border-left-color: var(--green);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.faq-card h3 {
+  font-size: 1.2rem;
+  color: #f1f5f9;
+  margin-bottom: 10px;
+}
+
+.faq-card p {
+  color: #cbd5e1;
+  font-size: 0.98rem;
+  margin-bottom: 0;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #0f172a, #0ea5e9);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 60px 0;
+}
+
+.cta-box h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+}
+
+.footer {
+  padding: 50px 8% 25px 8%;
+  background: #020617;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+  color: var(--text-muted);
+}
 </style>
 </head>
+
 <body>
 
-<h1>GeoStamp Camera – Frequently Asked Questions</h1>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <img src="assets/logo.png" alt="GeoStamp Camera Logo"/>
+    <span>GeoStamp Camera</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="gps-camera.html">GPS Camera Guide</a>
+    <a href="gps-map-camera-alternative.html">Alternative</a>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1" target="_blank">Download Free</a>
+  </div>
+</nav>
 
-<p>Find answers about GeoStamp Camera, the GPS Location, Date & Time Stamp Camera for Android.</p>
+<div class="content-container">
+  <h1>Frequently Asked Questions</h1>
+  <p class="subtitle">Quick answers to everything you need to know about GeoStamp Camera.</p>
 
-<p><a class="button" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1">Download on Google Play</a></p>
+  <div class="faq-card">
+    <h3>Is GeoStamp Camera completely free to download?</h3>
+    <p>Yes. GeoStamp Camera is free to download and install from the Google Play Store, giving you instant access to GPS coordinates, live mini-maps, timestamps, and address watermarks.</p>
+  </div>
 
-<h2>FAQs</h2>
+  <div class="faq-card">
+    <h3>Does GeoStamp Camera have intrusive pop-up ads?</h3>
+    <p>No! Our primary design philosophy is a clean, professional user experience. GeoStamp Camera only displays subtle banner ads that never interrupt your camera shutter, block your screen, or force you to watch 30-second videos.</p>
+  </div>
 
-<p class="q">Is GeoStamp Camera free to use?</p>
-<p>Yes. The app is free to download and offers additional premium features.</p>
+  <div class="faq-card">
+    <h3>Does the camera work offline without mobile data or Wi-Fi?</h3>
+    <p>Yes. Photo capture, timestamps, compass direction, altitude, and latitude/longitude coordinate stamping work 100% offline using your phone's internal GNSS/GPS hardware sensor.</p>
+  </div>
 
-<p class="q">Can I add GPS location to my photos?</p>
-<p>Yes. Add GPS coordinates, address, and map information directly to your images.</p>
+  <div class="faq-card">
+    <h3>Can I add my company logo to the photo stamps?</h3>
+    <p>Yes. In the settings menu, you can upload your custom company, agency, or contractor logo to brand your photos for official inspection reports and client presentations.</p>
+  </div>
 
-<p class="q">Can I add date and time stamps?</p>
-<p>Yes. Customize the date and time format to match your needs.</p>
+  <div class="faq-card">
+    <h3>Which coordinate formats are supported?</h3>
+    <p>You can toggle between Decimal Degrees (DD, e.g. 27.050197° N, 88.266101° E), Degrees Minutes Seconds (DMS), UTM, and Open Location Codes (Plus Codes).</p>
+  </div>
 
-<p class="q">Does it support weather and compass?</p>
-<p>Yes. Supported devices can display weather and compass information on photos.</p>
+  <div class="faq-card">
+    <h3>Can I tag specific project notes or site numbers?</h3>
+    <p>Yes. GeoStamp includes a dedicated "Project Note / Site ID" feature that allows you to tag job numbers, building addresses, or inspection codes directly on each photo.</p>
+  </div>
 
-<p class="q">Can I add my own logo?</p>
-<p>Yes. Custom logo support is available for branded photos.</p>
+  <div class="cta-box">
+    <h3>Ready to Experience Fast, Clean GPS Stamping?</h3>
+    <p>Download GeoStamp Camera free on Android and capture verified proof with zero popup delays.</p>
+    <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1" target="_blank">
+      Get It On Google Play
+    </a>
+  </div>
+</div>
 
-<p class="q">Does it work offline?</p>
-<p>Most camera and stamping functions work offline. Some location and map services require internet.</p>
-
-<p class="q">Who should use GeoStamp Camera?</p>
-<p>Perfect for construction, engineering, surveying, inspections, field work, real estate, travel and documentation.</p>
-
-<p class="q">Does it support Google Photos?</p>
-<p>Yes. The app supports Google Photos sync for compatible workflows.</p>
-
-<footer>
-<p>© GeoStamp Camera</p>
+<footer class="footer">
+  <p>© 2026 AKD Studio • <a href="index.html" style="color:#38bdf8; text-decoration:none;">GeoStamp Camera</a>. All rights reserved.</p>
 </footer>
 
 </body>
