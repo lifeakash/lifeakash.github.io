@@ -1,42 +1,288 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Construction Camera | GeoStamp Camera</title>
-<meta name="description" content="Construction Camera - GeoStamp Camera for Android with GPS, date & time, address, weather, compass and custom logo.">
+
+<title>Construction Camera App with GPS & Time Stamp | GeoStamp</title>
+<meta name="title" content="Construction Camera App with GPS & Time Stamp | GeoStamp">
+<meta name="description" content="The top construction camera app for Android. Document job site progress, subcontractor milestones, and safety compliance with tamper-proof GPS and date watermarks.">
+<meta name="keywords" content="construction camera, site inspection camera, construction progress photo, jobsite camera, contractor timestamp camera">
 <link rel="canonical" href="https://lifeakash.github.io/construction-camera.html">
-<script type="application/ld+json">{
-"@context":"https://schema.org",
-"@type":"SoftwareApplication",
-"name":"GeoStamp Camera",
-"operatingSystem":"Android",
-"applicationCategory":"PhotographyApplication",
-"downloadUrl":"https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1"
-}</script>
+
+<link rel="icon" href="assets/logo.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<!-- Schema.org Article & Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Construction Camera for Jobsite Progress & Safety Audits",
+  "description": "The top construction camera app for Android. Document job site progress, subcontractor milestones, and safety compliance with tamper-proof GPS and date watermarks.",
+  "image": "https://lifeakash.github.io/assets/banner.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "AKD Studio"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GeoStamp Camera",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lifeakash.github.io/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://lifeakash.github.io/construction-camera.html"
+}
+</script>
+
+<style>
+:root {
+  --bg-primary: #050816;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --border-light: rgba(255, 255, 255, 0.08);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --cyan: #38bdf8;
+  --green: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.8;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8%;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  margin-left: 20px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-cta {
+  background: var(--green);
+  color: white !important;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 600 !important;
+}
+
+.content-container {
+  max-width: 880px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  color: white;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--cyan);
+  margin: 45px 0 16px 0;
+}
+
+p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin: 35px 0;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 24px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--cyan);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.card h3 {
+  color: var(--cyan);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 15px 0 25px 25px;
+  color: #cbd5e1;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #0f172a, #0ea5e9);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.cta-box h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+}
+
+.footer {
+  padding: 50px 8% 25px 8%;
+  background: #020617;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+  color: var(--text-muted);
+}
+</style>
 </head>
+
 <body>
-<h1>Construction Camera</h1>
-<p>GeoStamp Camera lets you capture photos with GPS location, address, latitude, longitude, map, date & time, weather, compass, altitude and custom logo. Ideal for engineers, surveyors, construction professionals, field staff, inspectors and travelers.</p>
 
-<h2>Features</h2>
-<ul>
-<li>GPS Location Stamp</li>
-<li>Date & Time Stamp</li>
-<li>Address & Coordinates</li>
-<li>Weather & Compass</li>
-<li>Custom Logo Support</li>
-<li>Google Photos Sync</li>
-</ul>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <img src="assets/logo.png" alt="GeoStamp Camera Logo"/>
+    <span>GeoStamp Camera</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="gps-camera.html">GPS Camera Guide</a>
+    <a href="gps-map-camera-alternative.html">Alternative</a>
+    <a href="faq.html">FAQ</a>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1" target="_blank">Download Free</a>
+  </div>
+</nav>
 
-<p><a href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1">Download GeoStamp Camera</a></p>
+<div class="content-container">
+  <h1>Construction Camera for Jobsite Progress & Safety Audits</h1>
+  <p>For general contractors, site managers, and project superintendents, photographic documentation is the primary defense against payment disputes and OSHA compliance issues. GeoStamp Camera automatically embeds GPS coordinates, street address, and tamper-proof timestamps directly onto construction photos.</p>
 
-<hr>
-<p>
-<a href="index.html">Home</a> |
-<a href="faq.html">FAQ</a> |
-<a href="about.html">About</a> |
-<a href="privacy-policy.html">Privacy Policy</a>
-</p>
+  <div class="grid">
+    <div class="card">
+      <h3>🏗️ Structural Milestones & Concrete Pours</h3>
+      <p>Timestamp pre-pour rebar layouts, foundation pouring, and structural steel framing with undeniable time and location evidence.</p>
+    </div>
+    <div class="card">
+      <h3>👷 Subcontractor & OSHA Compliance</h3>
+      <p>Capture safety hazards, personal protective equipment (PPE) compliance, and daily subcontractor progress without camera shutter delays.</p>
+    </div>
+    <div class="card">
+      <h3>📦 Delivery & Materials Verification</h3>
+      <p>Log the exact delivery arrival time, condition, and location of high-value equipment and materials on-site.</p>
+    </div>
+  </div>
+
+  <h2>Key Industry Applications</h2>
+  <ul>
+    <li>Daily Jobsite Progress Logging</li>
+<li>Pre-pour Rebar & Structural Verification</li>
+<li>Subcontractor Dispute Resolution</li>
+<li>OSHA Safety Audits & Hazard Logging</li>
+
+  </ul>
+
+  <h2>Why Choose GeoStamp Camera?</h2>
+  <p>
+    Unlike conventional GPS cameras that bombard you with 30-second unskippable video ads or charge hefty monthly subscription fees, <strong>GeoStamp Camera</strong> is engineered for a clean user experience with minimal banner ads only. You can capture dozens of high-resolution photos in rapid succession without camera shutter delays.
+  </p>
+
+  <div class="cta-box">
+    <h3>Upgrade Your Field Photography</h3>
+    <p>Install GeoStamp Camera free on Android and streamline your technical photo documentation.</p>
+    <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.akdstudio.geostampcamera1" target="_blank">
+      Get GeoStamp Camera on Google Play
+    </a>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>© 2026 AKD Studio • <a href="index.html" style="color:#38bdf8; text-decoration:none;">GeoStamp Camera</a>. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
